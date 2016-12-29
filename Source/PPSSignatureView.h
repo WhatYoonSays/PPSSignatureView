@@ -7,6 +7,9 @@
 @property (assign, nonatomic) BOOL hasSignature;
 @property (strong, nonatomic) UIImage *signatureImage;
 
+@property (nonatomic, assign) float STROKE_WIDTH_MIN;
+@property (nonatomic, assign) float STROKE_WIDTH_MAX;
+
 - (void)erase;
 
 @end

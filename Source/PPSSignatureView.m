@@ -1,8 +1,6 @@
 #import "PPSSignatureView.h"
 #import <OpenGLES/ES2/glext.h>
 
-#define             STROKE_WIDTH_MIN 0.004 // Stroke width determined by touch velocity
-#define             STROKE_WIDTH_MAX 0.020
 #define       STROKE_WIDTH_SMOOTHING 0.5   // Low pass filter alpha
 
 #define           VELOCITY_CLAMP_MIN 20
@@ -149,6 +147,10 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         UILongPressGestureRecognizer *longer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         longer.cancelsTouchesInView = YES;
         [self addGestureRecognizer:longer];
+        
+        // Default MIN & MAX Width
+        self.STROKE_WIDTH_MIN = 0.04;
+        self.STROKE_WIDTH_MAX = 0.30;
         
     } else [NSException raise:@"NSOpenGLES2ContextException" format:@"Failed to create OpenGL ES2 context"];
 }
