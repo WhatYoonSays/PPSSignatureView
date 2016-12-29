@@ -149,8 +149,8 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         [self addGestureRecognizer:longer];
         
         // Default MIN & MAX Width
-        self.STROKE_WIDTH_MIN = 0.04;
-        self.STROKE_WIDTH_MAX = 0.30;
+        self.STROKE_WIDTH_MIN = 0.004;
+        self.STROKE_WIDTH_MAX = 0.030;
         
     } else [NSException raise:@"NSOpenGLES2ContextException" format:@"Failed to create OpenGL ES2 context"];
 }
